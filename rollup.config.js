@@ -7,9 +7,5 @@ export default {
 	entry: 'src/index.js',
 	format: 'umd',
 	moduleName: 'reactWithLifecycle',
-	plugins: [babel({
-		babelrc: false,
-		presets: ['es2015-rollup', 'react'],
-		plugins: ['transform-flow-strip-types']
-	})]
+	plugins: [babel()]
 };
