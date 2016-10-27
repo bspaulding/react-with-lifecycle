@@ -1,0 +1,26 @@
+{
+  "name": "react-with-lifecycle",
+  "version": "1.0.0",
+  "description": "HOC to add lifecycle hooks to any component, even stateless ones.",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "test": "flow check && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bspaulding/react-with-lifecycle.git"
+  },
+  "keywords": [
+    "react",
+    "higher",
+    "order",
+    "component",
+    "lifecycle"
+  ],
+  "author": "Bradley J. Spaulding",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bspaulding/react-with-lifecycle/issues"
+  },
+  "homepage": "https://github.com/bspaulding/react-with-lifecycle#readme"
+}
