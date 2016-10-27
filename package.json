@@ -7,7 +7,7 @@
     "build": "rollup -c",
     "flow": "flow check",
     "lint": "eslint src",
-    "prepublish": "rollup -c",
+    "prepublish": "NODE_ENV=ci rollup -c",
     "test": "jest"
   },
   "repository": {
