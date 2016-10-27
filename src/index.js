@@ -26,20 +26,20 @@ type Lifecycle = {|
 |};
 
 export default function WithLifecycle(lifecycle: Lifecycle, ComponentClass: ReactClass<*>) {
-  const classProperties = {
-    displayName: `WithLifecycle(${ComponentClass.displayName})`,
+	const classProperties = {
+		displayName: `WithLifecycle(${ComponentClass.displayName})`,
 
-    componentWillMount: cb(lifecycle.componentWillMount),
-    componentDidMount: cb(lifecycle.componentDidMount),
-    componentWillReceiveProps: cb(lifecycle.componentWillReceiveProps),
-    shouldComponentUpdate: cb(lifecycle.shouldComponentUpdate),
-    componentWillUpdate: cb(lifecycle.componentWillUpdate),
-    componentDidUpdate: cb(lifecycle.componentDidUpdate),
-    componentWillUnmount: cb(lifecycle.componentWillUnmount),
+		componentWillMount: cb(lifecycle.componentWillMount),
+		componentDidMount: cb(lifecycle.componentDidMount),
+		componentWillReceiveProps: cb(lifecycle.componentWillReceiveProps),
+		shouldComponentUpdate: cb(lifecycle.shouldComponentUpdate),
+		componentWillUpdate: cb(lifecycle.componentWillUpdate),
+		componentDidUpdate: cb(lifecycle.componentDidUpdate),
+		componentWillUnmount: cb(lifecycle.componentWillUnmount),
 
-    render() {
-      return <ComponentClass {...this.props}/>;
-    }
-  };
-  return React.createClass(classProperties);
+		render() {
+			return <ComponentClass {...this.props}/>;
+		}
+	};
+	return React.createClass(classProperties);
 }
