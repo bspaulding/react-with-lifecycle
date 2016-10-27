@@ -4,7 +4,10 @@
   "description": "HOC to add lifecycle hooks to any component, even stateless ones.",
   "main": "dist/bundle.js",
   "scripts": {
-    "test": "flow check && jest"
+    "build": "rollup -c",
+    "flow": "flow check",
+    "lint": "eslint src",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
