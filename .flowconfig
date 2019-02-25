@@ -1,0 +1,10 @@
+[ignore]
+.*/node_modules/flow-typed/.*
+.*/node_modules/marked-terminal/.*
+.*/node_modules/whatwg-fetch/.*
+
+[include]
+
+[libs]
+
+[options]
