@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "HOC to add lifecycle hooks to any component, even stateless ones.",
   "main": "dist/bundle.js",
+  "engines": {
+    "node": "10.15.1",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "build": "rollup -c",
     "flow": "flow check",
