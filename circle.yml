@@ -1,9 +1,0 @@
-machine:
-  node:
-    version: 6.2.2
-
-test:
-  pre:
-    - npm run flow
-    - npm run lint
-

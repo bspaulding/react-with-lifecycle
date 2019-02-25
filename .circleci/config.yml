@@ -1,0 +1,49 @@
+version: 2
+jobs:
+  checkout-and-install-deps:
+    docker:
+      - image: circleci/node:6.2.2
+    steps:
+      - restore_cache:
+          key: git-{{ .Revision }}
+      - checkout
+      - save_cache:
+          key: git-{{ .Revision }}
+          paths:
+            - .
+      - restore_cache:
+          key: npm-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          key: npm-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+  flow:
+    docker:
+      - image: circleci/node:6.2.2
+    steps:
+      - restore_cache:
+          key: git-{{ .Revision }}
+      - restore_cache:
+          key: npm-{{ checksum "package.json" }}
+      - run: npm run flow
+  lint:
+    docker:
+      - image: circleci/node:6.2.2
+    steps:
+      - restore_cache:
+          key: git-{{ .Revision }}
+      - restore_cache:
+          key: npm-{{ checksum "package.json" }}
+      - run: npm run lint
+workflows:
+  version: 2
+  flow-and-lint:
+    jobs:
+      - checkout-and-install-deps
+      - lint:
+          requires:
+            - checkout-and-install-deps
+      - flow:
+          requires:
+            - checkout-and-install-deps
